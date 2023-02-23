@@ -1,5 +1,8 @@
 # Artemis
 
+Artemis is a fleet management system for Toit devices. It connects your devices to the cloud and makes it possible
+to seamlessly update the firmware, containers, and configurations that run on your devices.
+
 ## Installation
 
 Artemis consists of a single executable. Download the corresponding tar.gz or .zip file and use the executable that is in it.
