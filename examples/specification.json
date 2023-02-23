@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "sdk-version": "v2.0.0-alpha.54",
+  "artemis-version": "v0.1.0",
+  "max-offline": "10s",
+  "connections": [
+    {
+      "type": "wifi",
+      "ssid": YOUR-SSID,
+      "password": YOUR-PASSWORD
+    }
+  ],
+  "apps": {
+    "hello": {
+      "entrypoint": "hello.toit"
+    },
+    "solar": {
+      "entrypoint": "examples/solar_example.toit",
+      "git": "https://github.com/toitware/toit-solar-position.git",
+      "branch": "v0.0.3"
+    }
+  }
+}
