@@ -63,6 +63,12 @@ so Artemis will download the correct SDK in the background.
 The flash command automatically sets the flashed device as the default, so that
 other device commands don't need to pass in a device flag.
 
+If the flashing doesn't work you might still end up with a provisioned identity, that
+isn't used. We will improve this situation, but for now don't worry about it.
+
+You can use the usual monitoring tools (like `jag monitor`) to watch the output of the
+device.
+
 ### Update
 Similar to 'flash' the update command also takes a specification file. It can take a
 device-id flag, but most of the time you just use the default ID that was either set
@@ -73,7 +79,9 @@ during flashing, or that can be set with toit device default.
 Note: any `[message decoder: wrong tison marker ...]` message is benign and can be ignored.
 
 ## Specification file
-An example specification file:
+An example specification file is located in [examples/specification.json](examples/specification.json).
+
+It looks similar to this:
 ```
 {
   "version": 1,
@@ -100,7 +108,7 @@ An example specification file:
 }
 ```
 
-Most of these should be self-explanatory, but be aware that not all sdk-versions and artemis-versions are supported.
+Most of these should be self-explanatory, but be aware that not all sdk-versions and Artemis-versions are supported.
 
 Use `artemis sdk list` to see the valid combinations.
 
@@ -111,7 +119,7 @@ Flash the device with the specification.
 
 Change the apps (for example a different entry point, or a different solar version).
 
-Change the sdk-version and artemis-version, but make sure the combination is supported (use
+Change the sdk-version and Artemis-version, but make sure the combination is supported (use
 `artemis sdk list` to get all possible combinations).
 
 Run `artemis update --specification <specification-file>` to update the device.
@@ -119,7 +127,9 @@ Run `artemis update --specification <specification-file>` to update the device.
 The device should find the new configuration and automatically update.
 
 ## Transient changes
-Commands that are in artemis device transient only change the current configuration of
+The transient feature is still under development and might change.
+
+Commands that are in `artemis device transient` only change the current configuration of
 a device, but are not persistent. A reboot of the device will return to the last
 firmware state.
 
