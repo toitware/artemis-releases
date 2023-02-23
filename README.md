@@ -100,7 +100,7 @@ It looks similar to this:
   "version": 1,
   "sdk-version": "v2.0.0-alpha.54",
   "artemis-version": "v0.1.0",
-  "max-offline": "10s",
+  "max-offline": "0s",
   "connections": [
     {
       "type": "wifi",
