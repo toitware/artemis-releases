@@ -2,7 +2,17 @@
 
 ## Installation
 
-Artemis consists of a single executable. Download the corresponding tar.gz or .zip file and use the executable that is in it.
+Artemis consists of a single executable. You can download it from here:
+
+- [Download Artemis for macOS](https://github.com/toitware/artemis-releases/releases/latest/download/artemis.dmg)
+  (or as an [archive](https://github.com/toitware/artemis-releases/releases/latest/download/artemis-macos.zip))
+- [Download Artemis for Windows](https://github.com/toitware/artemis-releases/releases/latest/download/artemis-windows.zip)
+  (only as an archive)
+- [Download Artemis for Linux](https://github.com/toitware/artemis-releases/releases/latest/download/artemis-linux.tar.gz)
+  (only as an archive)
+
+If you download an archive, you should unpack it and put the embedded `artemis` or `artemis.exe` binary
+somewhere on your `PATH`. The same applies when you extract the `artemis` binary from the macOS `artemis.dmg` file.
 
 ## Authentication
 All users must be authenticated.
