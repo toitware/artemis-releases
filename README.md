@@ -98,8 +98,8 @@ It looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.54",
-  "artemis-version": "v0.1.0",
+  "sdk-version": "v2.0.0-alpha.60",
+  "artemis-version": "v0.2.0",
   "max-offline": "0s",
   "connections": [
     {
@@ -108,7 +108,7 @@ It looks similar to this:
       "password": "YOUR WIFI PW"
     }
   ],
-  "apps": {
+  "containers": {
     "hello": {
       "entrypoint": "hello.toit"
     },
@@ -130,7 +130,7 @@ Create a hello.toit and put it next to the specification file.
 
 Flash the device with the specification.
 
-Change the apps (for example a different entry point, or a different solar version).
+Change the containers (for example a different entry point, or a different solar version).
 
 Change the sdk-version and Artemis-version, but make sure the combination is supported (use
 `artemis sdk list` to get all possible combinations).
