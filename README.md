@@ -89,8 +89,6 @@ during flashing, or that can be set with toit device default.
 
 `artemis device update --specification <some-specification.json>`
 
-Note: any `[message decoder: wrong tison marker ...]` message is benign and can be ignored.
-
 ## Specification file
 An example specification file is located in [examples/specification.json](examples/specification.json).
 
@@ -98,8 +96,8 @@ It looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.60",
-  "artemis-version": "v0.2.0",
+  "sdk-version": "v2.0.0-alpha.62",
+  "artemis-version": "v0.2.1",
   "max-offline": "0s",
   "connections": [
     {
