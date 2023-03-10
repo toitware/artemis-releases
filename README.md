@@ -46,9 +46,9 @@ artemis org members list
 ```
 
 Once you create a new organization it is automatically set as default. You can switch to a different org with
-`artemis org default org-id`, or by passing the organization id to the commands that need one.
+`artemis org default YOUR-ORG-ID`, or by passing the organization id to the commands that need one.
 
-You can add other users join your organization with `artemis org members add <user-id>`.
+You can add other users join your organization with `artemis org members add YOUR-USER-ID`.
 
 The user-id can be found with `artemis profile show`.
 
@@ -65,7 +65,7 @@ Both take a specification file as input (see below).
 
 ### Flash
 Plug in an esp32 and run the following command:
-`artemis device flash --specification <some-specification.json> --port /dev/ttyUSB0`
+`artemis device flash --specification YOUR-SPECIFICATION.json --port /dev/ttyUSB0`
 
 Unless you are on Linux you will probably need to change the `/dev/ttyUSB0` to your
 setup.
@@ -87,7 +87,7 @@ Similar to 'flash' the update command also takes a specification file. It can ta
 device-id flag, but most of the time you just use the default ID that was either set
 during flashing, or that can be set with toit device default.
 
-`artemis device update --specification <some-specification.json>`
+`artemis device update --specification YOUR-SPECIFICATION.json`
 
 ## Specification file
 An example specification file is located in [examples/specification.json](examples/specification.json).
@@ -133,7 +133,7 @@ Change the containers (for example a different entry point, or a different solar
 Change the sdk-version and Artemis-version, but make sure the combination is supported (use
 `artemis sdk list` to get all possible combinations).
 
-Run `artemis update --specification <specification-file>` to update the device.
+Run `artemis update --specification YOUR-SPECIFICATION.json` to update the device.
 
 The device should find the new configuration and automatically update.
 
