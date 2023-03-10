@@ -96,8 +96,8 @@ It looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.62",
-  "artemis-version": "v0.2.1",
+  "sdk-version": "v2.0.0-alpha.63",
+  "artemis-version": "v0.2.2",
   "max-offline": "0s",
   "connections": [
     {
@@ -137,22 +137,15 @@ Run `artemis update --specification <specification-file>` to update the device.
 
 The device should find the new configuration and automatically update.
 
-## Transient changes
-The transient feature is still under development and might change.
+## Incremental changes
+There are some commands that are in `artemis device` only change the current configuration of
+a device and do not require a full firmware update.
 
-Commands that are in `artemis device transient` only change the current configuration of
-a device, but are not persistent. A reboot of the device will return to the last
-firmware state.
-
-As such, transient changes are a good way for development; especially as they are faster
+As such, incremental changes are a good way for development; especially as they are faster
 to get onto the device.
 
 There are 3 commands in the `artemis transient` section:
 
-1. `install`: installs a new application
-2. `uninstall`: removes the application again
+1. `container install`: installs a new container
+2. `container uninstall`: uninstalls the container again
 3. `set-max-offline`: sets the max offline to the given time (in seconds).
-
-Note that install and uninstall currently don't have any effect on the applications that
-are in the flash. It is therefore not possible to temporarily disable or update an application
-that has been installed together with the firmware.
