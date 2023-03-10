@@ -138,10 +138,10 @@ Run `artemis update --specification <specification-file>` to update the device.
 The device should find the new configuration and automatically update.
 
 ## Incremental changes
-There are some commands that are in `artemis device` only change the current configuration of
+There are some commands in `artemis device` that only change the current configuration of
 a device and do not require a full firmware update.
 
-As such, incremental changes are a good way for development; especially as they are faster
+Such incremental changes are a good way for development; especially as they are faster
 to get onto the device.
 
 There are 3 commands in the `artemis transient` section:
