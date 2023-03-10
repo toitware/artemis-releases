@@ -133,7 +133,7 @@ Change the containers (for example a different entry point, or a different solar
 Change the sdk-version and Artemis-version, but make sure the combination is supported (use
 `artemis sdk list` to get all possible combinations).
 
-Run `artemis update --specification YOUR-SPECIFICATION.json` to update the device.
+Run `artemis device update --specification YOUR-SPECIFICATION.json` to update the device.
 
 The device should find the new configuration and automatically update.
 
