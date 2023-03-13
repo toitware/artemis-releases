@@ -144,7 +144,7 @@ a device and do not require a full firmware update.
 Such incremental changes are a good way for development; especially as they are faster
 to get onto the device.
 
-There are 3 commands in the `artemis device` section:
+The following commands of `artemis device` are incremental:
 
 1. `container install`: installs a new container
 2. `container uninstall`: uninstalls the container again
