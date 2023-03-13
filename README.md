@@ -153,5 +153,5 @@ The following commands of `artemis device` are incremental:
 As an example, you can install the `hello` container and get it to run every 10s like this:
 
 ```sh
-artemis device container install --trigger interval:10s hello hello.toit`
+artemis device container install --trigger interval:10s hello hello.toit
 ```
