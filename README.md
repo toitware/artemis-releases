@@ -46,9 +46,9 @@ artemis org members list
 ```
 
 Once you create a new organization it is automatically set as default. You can switch to a different org with
-`artemis org default org-id`, or by passing the organization id to the commands that need one.
+`artemis org default YOUR-ORG-ID`, or by passing the organization id to the commands that need one.
 
-You can add other users join your organization with `artemis org members add <user-id>`.
+You can add other users join your organization with `artemis org members add YOUR-USER-ID`.
 
 The user-id can be found with `artemis profile show`.
 
@@ -65,7 +65,7 @@ Both take a specification file as input (see below).
 
 ### Flash
 Plug in an esp32 and run the following command:
-`artemis device flash --specification <some-specification.json> --port /dev/ttyUSB0`
+`artemis device flash --specification YOUR-SPECIFICATION.json --port /dev/ttyUSB0`
 
 Unless you are on Linux you will probably need to change the `/dev/ttyUSB0` to your
 setup.
@@ -87,7 +87,7 @@ Similar to 'flash' the update command also takes a specification file. It can ta
 device-id flag, but most of the time you just use the default ID that was either set
 during flashing, or that can be set with toit device default.
 
-`artemis device update --specification <some-specification.json>`
+`artemis device update --specification YOUR-SPECIFICATION.json`
 
 ## Specification file
 An example specification file is located in [examples/specification.json](examples/specification.json).
@@ -96,8 +96,8 @@ It looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.62",
-  "artemis-version": "v0.2.1",
+  "sdk-version": "v2.0.0-alpha.63",
+  "artemis-version": "v0.2.2",
   "max-offline": "0s",
   "connections": [
     {
@@ -133,26 +133,19 @@ Change the containers (for example a different entry point, or a different solar
 Change the sdk-version and Artemis-version, but make sure the combination is supported (use
 `artemis sdk list` to get all possible combinations).
 
-Run `artemis update --specification <specification-file>` to update the device.
+Run `artemis device update --specification YOUR-SPECIFICATION.json` to update the device.
 
 The device should find the new configuration and automatically update.
 
-## Transient changes
-The transient feature is still under development and might change.
+## Incremental changes
+There are some commands in `artemis device` that only change the current configuration of
+a device and do not require a full firmware update.
 
-Commands that are in `artemis device transient` only change the current configuration of
-a device, but are not persistent. A reboot of the device will return to the last
-firmware state.
-
-As such, transient changes are a good way for development; especially as they are faster
+Such incremental changes are a good way for development; especially as they are faster
 to get onto the device.
 
-There are 3 commands in the `artemis transient` section:
+There are 3 commands in the `artemis device` section:
 
-1. `install`: installs a new application
-2. `uninstall`: removes the application again
+1. `container install`: installs a new container
+2. `container uninstall`: uninstalls the container again
 3. `set-max-offline`: sets the max offline to the given time (in seconds).
-
-Note that install and uninstall currently don't have any effect on the applications that
-are in the flash. It is therefore not possible to temporarily disable or update an application
-that has been installed together with the firmware.

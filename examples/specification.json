@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.62",
-  "artemis-version": "v0.2.1",
+  "sdk-version": "v2.0.0-alpha.63",
+  "artemis-version": "v0.2.2",
   "max-offline": "0s",
   "connections": [
     {
