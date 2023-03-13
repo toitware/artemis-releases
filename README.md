@@ -149,3 +149,9 @@ The following commands of `artemis device` are incremental:
 1. `container install`: installs a new container
 2. `container uninstall`: uninstalls the container again
 3. `set-max-offline`: sets the max offline to the given time (in seconds).
+
+As an example, you can install the `hello` container and get it to run every 10s like this:
+
+```sh
+artemis device container install --trigger interval:10s hello hello.toit`
+```
