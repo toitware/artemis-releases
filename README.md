@@ -97,7 +97,7 @@ It looks similar to this:
 {
   "version": 1,
   "sdk-version": "v2.0.0-alpha.64",
-  "artemis-version": "v0.2.3",
+  "artemis-version": "v0.2.4",
   "max-offline": "0s",
   "connections": [
     {
