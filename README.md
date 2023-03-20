@@ -96,8 +96,8 @@ It looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.68",
-  "artemis-version": "v0.3.3",
+  "sdk-version": "v2.0.0-alpha.69",
+  "artemis-version": "v0.3.4",
   "max-offline": "0s",
   "connections": [
     {
