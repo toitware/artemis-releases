@@ -324,9 +324,9 @@ You can always see the status of your device by doing `artemis device show`. It 
 useful information about a device, including its state and recent events:
 
 ```
-% artemis device show -d 5a52f07f-c2fb-54b9-b611-21e8fcec678b --max-events=6
-Device ID: 5a52f07f-c2fb-54b9-b611-21e8fcec678b
-Organization ID: a2f4df63-f9ed-4452-be76-4d86136d23f9 (Holtshøjen)
+% artemis device show -d xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --max-events=6
+Device ID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Organization ID: yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 
 Firmware state as reported by the device:
   apps:
