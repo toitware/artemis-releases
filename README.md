@@ -102,6 +102,7 @@ following contents into a `device.json` file:
   "containers": {
   }
 }
+```
 
 You can pick any name for the specification file (we went with `device.json`)
 and it fully specifies what Artemis puts on the device when it is flashed.
@@ -136,8 +137,10 @@ entry 0x400805c4
 [artemis] INFO: starting {device: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
 [artemis.scheduler] INFO: job started {job: synchronize}
 [artemis.synchronize] INFO: connecting
-[wifi] INFO: connecting
-[wifi] INFO: connected
+[wifi] DEBUG: connecting
+[wifi] DEBUG: connected
+[wifi] INFO: network address dynamically assigned through dhcp {ip: 192.168.86.31}
+[wifi] INFO: dns server address dynamically assigned through dhcp {ip: [192.168.86.1]}
 [network] INFO: opened
 [artemis.synchronize] INFO: connected to network
 [artemis.synchronize] INFO: connected to broker
