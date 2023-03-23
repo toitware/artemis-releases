@@ -393,7 +393,8 @@ The `max-offline` entry is optional and defaults to 0s. Use it to control for ho
 long your device is allowed to stay offline.
 
 The `connections` section contains a prioritized list of ways to connect to the
-Internet. You can have multiple `wifi` entries and they are tried in order.
+Internet. You can have multiple `wifi` entries and Artemis will attempt to
+connect to them in the specified order.
 
 It is also possible to have `cellular` entries in `connections`, but for that to
 work you'll need to have a cellular driver installed as one of your containers.
