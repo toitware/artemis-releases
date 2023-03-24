@@ -25,7 +25,7 @@ If you download an archive, you should unpack it and put the embedded `artemis` 
 somewhere on your `PATH`. The same applies when you extract the `artemis` binary from the macOS `artemis.dmg`
 file.
 
-The Artemis command line tool is a standalone executable written in Toit.  Use `artemis --help` for usage
+The Artemis command line tool is a standalone executable written in Toit. Use `artemis help` for usage help.
 help.
 
 ## Signing up and logging in
@@ -62,7 +62,7 @@ artemis org show
 artemis org members list
 ```
 
-The `artemis or show` command shows you your organization ID, which is a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+The `artemis org show` command shows you your organization ID, which is a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 Once you create a new organization it is automatically set as default. You can switch to a different organization with
 `artemis org default YOUR-ORG-ID`, or by passing the organization id to the commands that need one.
@@ -303,7 +303,7 @@ Unless you are on Linux you will probably need to change the `/dev/ttyUSB0` to y
 setup.  Sometimes the name is `/dev/ttyACM0`, depending on which USB-to-serial driver
 your computer is using.
 
-On some ESP32 devices you need to press a button to flash it over USB.
+On some ESP32 devices, you need to press a button to flash it over USB.
 
 If the flashing doesn't work you might still end up with a provisioned identity, that
 isn't used. We will improve this situation, but for now don't worry about it.
