@@ -108,7 +108,7 @@ You can pick any name for the specification file (we went with `device.json`)
 and it fully specifies what Artemis puts on the device when it is flashed.
 Find more details on the content of the specification files [here](#specification-files).
 
-To get your functionality onto your device, yyou flash a device with firmware
+To get your functionality onto your device, you flash a device with firmware
 derived from the above specification by running:
 
 ``` sh
