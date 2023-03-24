@@ -25,6 +25,9 @@ If you download an archive, you should unpack it and put the embedded `artemis` 
 somewhere on your `PATH`. The same applies when you extract the `artemis` binary from the macOS `artemis.dmg`
 file.
 
+The Artemis command line tool is a standalone executable written in Toit.  Use `artemis --help` for usage
+help.
+
 ## Signing up and logging in
 
 All users must be authenticated. For OAuth-based authentication you can just
@@ -34,13 +37,13 @@ signup will be triggered automatically.
 For email-based authentication sign up with:
 
 ``` sh
-artemis auth artemis signup --email=foo@bar.com --password=some_password
+artemis auth artemis signup --email=myname@example.com --password=some_password
 ```
 
 Then, after having confirmed the email address, log in with:
 
 ``` sh
-artemis auth artemis login --email=foo@bar.com --password=some_password
+artemis auth artemis login --email=myname@example.com --password=some_password
 ```
 
 Usually, signing up by OAuth is more convenient, but email-based authentication is often useful
@@ -59,7 +62,9 @@ artemis org show
 artemis org members list
 ```
 
-Once you create a new organization it is automatically set as default. You can switch to a different org with
+The `artemis or show` command shows you your organization ID, which is a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+
+Once you create a new organization it is automatically set as default. You can switch to a different organization with
 `artemis org default YOUR-ORG-ID`, or by passing the organization id to the commands that need one.
 
 You can add other users join your organization with `artemis org members add THEIR-USER-ID`. The
@@ -95,7 +100,7 @@ following contents into a `device.json` file:
   "connections": [
     {
       "type": "wifi",
-      "ssid": "YOUR SSID",
+      "ssid": "YOUR WIFI NAME",
       "password": "YOUR WIFI PASSWORD"
     }
   ],
@@ -115,7 +120,7 @@ derived from the above specification by running:
 artemis device flash --port /dev/ttyUSB0 --specification device.json
 ```
 
-This flashes the device over the serial port and puts both the Toit
+This flashes the device over the USB serial port and puts both the Toit
 platform and the Artemis service onto the device. Once flashed, you
 can follow the behavior of your device by monitoring the serial port
 using something like `jag monitor`
@@ -160,7 +165,7 @@ you have a cloud-managed device capable of running high-level code.
 ## Tinkering with your device
 
 Artemis allows you to change and tinker with the current state of a device
-without require a full firmware update. This makes it possible to change
+without requiring a full firmware update. This makes it possible to change
 the behavior of a device by adding new functionality (drivers or applications)
 or by changing configurations.
 
@@ -224,7 +229,7 @@ triggers on the command line. If you *only* want to run when booting,
 you can do:
 
 ``` sh
-artemis device container install --triger boot hello hello.toit
+artemis device container install --trigger boot hello hello.toit
 ```
 
 You can also get Artemis to run your containers on a schedule
@@ -295,7 +300,10 @@ flashes it onto your device using a bundled version of
 [`esptool`](https://github.com/espressif/esptool).
 
 Unless you are on Linux you will probably need to change the `/dev/ttyUSB0` to your
-setup.
+setup.  Sometimes the name is `/dev/ttyACM0`, depending on which USB-to-serial driver
+your computer is using.
+
+On some ESP32 devices you need to press a button to flash it over USB.
 
 If the flashing doesn't work you might still end up with a provisioned identity, that
 isn't used. We will improve this situation, but for now don't worry about it.
@@ -316,7 +324,7 @@ If you lack a group membership, you can add it with
 sudo usermod -aG dialout $USER
 ```
 
-You may have to log out and log back in for this to take effect.
+You usually have to log out and log back in for this to take effect.
 
 ### `artemis device show`
 
@@ -357,7 +365,7 @@ the device synchronize from the cloud (`get-goal`) and to the cloud (`update-sta
 ## Specification files
 
 You can find an example specification file in [examples/specification.json](examples/specification.json).
-It looks similar to this:
+It is in JSON format and looks similar to this:
 
 ```
 {
