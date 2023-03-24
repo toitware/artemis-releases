@@ -269,8 +269,8 @@ device.
 
 Similar to `artemis device flash`, the over-the-air update command also
 takes a specification file, so the common workflow is to change your
-specification files to reflect the state you want your devices in a
-nd then update them to that through:
+specification files to reflect the state you want your devices in, and
+then update them to that through:
 
 ``` sh
 artemis device update --specification device.json
