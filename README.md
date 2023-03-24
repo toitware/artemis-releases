@@ -251,7 +251,7 @@ and run:
 artemis device container install args args.toit foo bar
 ```
 
-you should see `arguments = ["foo", "bar"]` printed.
+you should see `arguments = [foo, bar]` printed.
 
 Finally, you can always uninstall a container again using:
 
