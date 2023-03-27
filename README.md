@@ -95,8 +95,8 @@ following contents into a `device.json` file:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.69",
-  "artemis-version": "v0.4.0",
+  "sdk-version": "v2.0.0-alpha.72",
+  "artemis-version": "v0.4.1",
   "connections": [
     {
       "type": "wifi",
@@ -370,8 +370,8 @@ It is in JSON format and looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.69",
-  "artemis-version": "v0.4.0",
+  "sdk-version": "v2.0.0-alpha.72",
+  "artemis-version": "v0.4.1",
   "max-offline": "0s",
   "connections": [
     {
