@@ -425,14 +425,15 @@ when the device goes to sleep like this:
   "cellular": {
     "entrypoint": "src/modules/sequans/monarch.toit",
     "git": "https://github.com/toitware/cellular.git",
-    "branch": "v2.0.0",
+    "branch": "v2.0.1",
     "background": true,
-    "triggers": [ "boot" ]
+    "critical": true
   }
 }
 ```
 
-You can also specify interval triggers in the `containers` section
+The `critical` flag makes the container run continuously. If you want your container
+to run periodically, you can specify interval triggers in the `containers` section
 like this:
 
 ```
