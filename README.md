@@ -95,8 +95,8 @@ following contents into a `device.json` file:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.73",
-  "artemis-version": "v0.4.3",
+  "sdk-version": "v2.0.0-alpha.74",
+  "artemis-version": "v0.4.4",
   "connections": [
     {
       "type": "wifi",
@@ -370,8 +370,8 @@ It is in JSON format and looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.73",
-  "artemis-version": "v0.4.3",
+  "sdk-version": "v2.0.0-alpha.74",
+  "artemis-version": "v0.4.4",
   "max-offline": "0s",
   "connections": [
     {
@@ -425,7 +425,7 @@ when the device goes to sleep like this:
   "cellular": {
     "entrypoint": "src/modules/sequans/monarch.toit",
     "git": "https://github.com/toitware/cellular.git",
-    "branch": "v2.0.1",
+    "branch": "v2.0.2",
     "background": true,
     "critical": true
   }
