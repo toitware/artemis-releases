@@ -97,7 +97,7 @@ following contents into a `device.json` file:
   "version": 1,
   "sdk-version": "v2.0.0-alpha.74",
   "artemis-version": "v0.4.4",
-  "max-offlne": "0s",
+  "max-offline": "0s",
   "connections": [
     {
       "type": "wifi",
