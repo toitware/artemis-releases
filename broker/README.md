@@ -1,4 +1,4 @@
-# Supabase Broker
+# Supabase broker
 This folder contains source code and instructions for deploying your own
 Artemis broker on Supabase.
 
@@ -17,7 +17,7 @@ is sent to and from your devices via the broker.
 
 ## Supabase setup
 1. Install the Supabase CLI. See https://supabase.com/docs/guides/cli.
-2. Create a Supabase account at https://supabase.com.
+2. Create a Supabase account at https://supabase.com/.
 3. Create a new project. Remember the database password.
 4. Copy the reference ID. It can be found in the general project settings,
    or directly in the URL.
