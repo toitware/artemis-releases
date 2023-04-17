@@ -31,19 +31,19 @@ help.
 ## Signing up and logging in
 
 All users must be authenticated. For OAuth-based authentication you can just
-log into Artemis with `artemis auth artemis login`. During the first time, a
+log into Artemis with `artemis auth login`. During the first time, a
 signup will be triggered automatically.
 
 For email-based authentication sign up with:
 
 ``` sh
-artemis auth artemis signup --email=myname@example.com --password=some_password
+artemis auth signup --email=myname@example.com --password=some_password
 ```
 
 Then, after having confirmed the email address, log in with:
 
 ``` sh
-artemis auth artemis login --email=myname@example.com --password=some_password
+artemis auth login --email=myname@example.com --password=some_password
 ```
 
 Usually, signing up by OAuth is more convenient, but email-based authentication is often useful
@@ -95,8 +95,8 @@ following contents into a `device.json` file:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.74",
-  "artemis-version": "v0.4.4",
+  "sdk-version": "v2.0.0-alpha.75",
+  "artemis-version": "v0.5.0",
   "max-offline": "0s",
   "connections": [
     {
@@ -118,7 +118,7 @@ To get your functionality onto your device, you flash a device with firmware
 derived from the above specification by running:
 
 ``` sh
-artemis device flash --port /dev/ttyUSB0 --specification device.json
+artemis serial flash --port /dev/ttyUSB0 --specification device.json
 ```
 
 This flashes the device over the USB serial port and puts both the Toit
@@ -273,7 +273,7 @@ latest Artemis release, you can do an over-the-air firmware update. Such
 updates are pushed to the broker in a compressed form and picked up by the
 device.
 
-Similar to `artemis device flash`, the over-the-air update command also
+Similar to `artemis serial flash`, the over-the-air update command also
 takes a specification file, so the common workflow is to change your
 specification files to reflect the state you want your devices in, and
 then update them to that through:
@@ -294,7 +294,7 @@ This sections shows more details about some the commands and file formats.
 
 ## Device commands
 
-### `artemis device flash`
+### `artemis serial flash`
 
 The flash command converts your specification file into a binary firmware and
 flashes it onto your device using a bundled version of
@@ -371,8 +371,8 @@ It is in JSON format and looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.74",
-  "artemis-version": "v0.4.4",
+  "sdk-version": "v2.0.0-alpha.75",
+  "artemis-version": "v0.5.0",
   "max-offline": "0s",
   "connections": [
     {
