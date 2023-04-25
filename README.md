@@ -101,7 +101,7 @@ is empty. The `specification.json` file is the most interesting to get started.
 Artemis lets you describe the functionality and configuration of your devices
 in version control friendly [specification files](#specification-files).
 Let's start with the simplest possible specification by putting the
-following contents into the `specification.json` file:
+following content into the `specification.json` file:
 
 ```
 {
