@@ -87,16 +87,27 @@ you're ready to put Artemis on a device and manage it via the cloud.
 
 ## First steps
 
+Artemis manages fleets of devices. To get started, first you must create
+an empty fleet in a suitable directory. Go to the directory and run:
+
+``` sh
+artemis fleet init
+```
+
+This creates three files: `fleet.json`, `devices.json`, and `specification.json`.
+The `fleet.json` file holds some metadata and the list of devices in `devices.json`
+is empty. The `specification.json` file is the most interesting to get started.
+
 Artemis lets you describe the functionality and configuration of your devices
 in version control friendly [specification files](#specification-files).
-Let's start with the simplest possible specification file by putting the
-following contents into a `device.json` file:
+Let's start with the simplest possible specification by putting the
+following contents into the `specification.json` file:
 
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.78",
-  "artemis-version": "v0.5.1",
+  "sdk-version": "v2.0.0-alpha.79",
+  "artemis-version": "v0.5.2",
   "max-offline": "0s",
   "connections": [
     {
@@ -110,15 +121,15 @@ following contents into a `device.json` file:
 }
 ```
 
-You can pick any name for the specification file (we went with `device.json`)
-and it fully specifies what Artemis puts on the device when it is flashed.
-Find more details on the content of the specification files [here](#specification-files).
+The specification file (`specification.json`) fully specifies what Artemis
+puts on the device in your fleet when they are flashed. Find more details
+on the content of the specification files [here](#specification-files).
 
 To get your functionality onto your device, you flash a device with firmware
 derived from the above specification by running:
 
 ``` sh
-artemis serial flash --port /dev/ttyUSB0 --specification device.json
+artemis serial flash --port /dev/ttyUSB0
 ```
 
 This flashes the device over the USB serial port and puts both the Toit
@@ -160,6 +171,13 @@ be ready to check its state:
 artemis device show
 ```
 
+Artemis also added your device to your fleet as part of running `artemis serial flash`,
+so you can now check the status of your entire fleet by running:
+
+``` sh
+artemis fleet status
+```
+
 Great! With a little help from the Artemis service and developer tooling,
 you have a cloud-managed device capable of running high-level code.
 
@@ -180,7 +198,7 @@ and synchronizes.
 
 Devices that connect frequently or all the time are easy
 to interact with and manage, but they spend a lot of power on staying connected
-all the time. The device specification in `device.json` does not specify
+all the time. The device specification in `specification.json` does not specify
 how often to connect, so Artemis assumes that you want an interactive device.
 
 If you want to allow your device to not stay connected all the time, you can
@@ -279,12 +297,22 @@ specification files to reflect the state you want your devices in, and
 then update them to that through:
 
 ``` sh
-artemis device update --specification device.json
+artemis device update --specification specification.json
 ```
 
 You can specify which device to update using a device-id flag (`-d`), but most
 of the time you just use the default ID that was either set
 during flashing, or that can be set with `artemis device default`.
+
+## Updating the entire fleet
+
+If you've modified the `specification.json` file and you want your
+entire fleet of devices to update to reflect the changes, you can
+run:
+
+``` sh
+artemis fleet update
+```
 
 ---------------------
 
@@ -371,8 +399,8 @@ It is in JSON format and looks similar to this:
 ```
 {
   "version": 1,
-  "sdk-version": "v2.0.0-alpha.78",
-  "artemis-version": "v0.5.1",
+  "sdk-version": "v2.0.0-alpha.79",
+  "artemis-version": "v0.5.2",
   "max-offline": "0s",
   "connections": [
     {
