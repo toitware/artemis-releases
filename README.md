@@ -122,7 +122,7 @@ following content into the `specification.json` file:
 ```
 
 The specification file (`specification.json`) fully specifies what Artemis
-puts on the device in your fleet when they are flashed. Find more details
+puts on a device in your fleet when it is flashed. Find more details
 on the content of the specification files [here](#specification-files).
 
 To get your functionality onto your device, you flash a device with firmware
