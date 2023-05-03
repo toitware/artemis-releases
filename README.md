@@ -112,7 +112,7 @@ following content into the `specification.json` file:
   "connections": [
     {
       "type": "wifi",
-      "ssid": "YOUR WIFI NAME",
+      "ssid": "YOUR WIFI SSID",
       "password": "YOUR WIFI PASSWORD"
     }
   ],
@@ -405,8 +405,8 @@ It is in JSON format and looks similar to this:
   "connections": [
     {
       "type": "wifi",
-      "ssid": "YOUR SSID",
-      "password": "YOUR WIFI PW"
+      "ssid": "YOUR WIFI SSID",
+      "password": "YOUR WIFI PASSWORD"
     }
   ],
   "containers": {
