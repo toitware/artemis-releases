@@ -6,8 +6,8 @@
   "connections": [
     {
       "type": "wifi",
-      "ssid": YOUR-SSID,
-      "password": YOUR-PASSWORD
+      "ssid": YOUR-WIFI-SSID,
+      "password": YOUR-WIFI-PASSWORD
     }
   ],
   "containers": {
