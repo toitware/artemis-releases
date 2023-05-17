@@ -1,8 +1,8 @@
 {
   "version": 1,
   "name": "example",
-  "sdk-version": "v2.0.0-alpha.82",
-  "artemis-version": "v0.6.0",
+  "sdk-version": "v2.0.0-alpha.83",
+  "artemis-version": "v0.6.1",
   "max-offline": "0s",
   "connections": [
     {
