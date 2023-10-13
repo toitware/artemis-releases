@@ -2,7 +2,7 @@
   "version": 1,
   "name": "example",
   "sdk-version": "v2.0.0-alpha.115",
-  "artemis-version": "v0.11.4",
+  "artemis-version": "v0.12.0",
   "max-offline": "0s",
   "connections": [
     {
