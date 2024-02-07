@@ -1,7 +1,7 @@
 version: 1
 name: example
-sdk-version: v2.0.0-alpha.133
-artemis-version: v0.15.2
+sdk-version: v2.0.0-alpha.134
+artemis-version: v0.15.3
 max-offline: 0s
 connections:
   - type: wifi
