@@ -4,17 +4,12 @@
   "title": "Pod specification",
   "description": "Pod specification format of Artemis.",
   "type": "object",
-  "$comment": "Note that we don't require any of the properties. This is because we allow to extend specifications, and some properties might thus not exist in this file.",
   "$ref": "#/$defs/PodSpecification",
   "$defs": {
     "PodSpecification": {
       "type": "object",
-      "required": [
-        "name",
-        "sdk-version",
-        "artemis-version"
-      ],
       "unevaluatedProperties": false,
+      "$comment": "We don't 'require' any of the properties here. This is because we allow to extend specifications, and some properties might thus not exist in this file. A flattened pod-specification requires '$schema' (or the deprecated 'version'), 'name', 'sdk-version', and 'artemis-version' to be present.",
       "properties": {
         "$schema": {
           "description": "Schema of the pod specification.",
@@ -37,7 +32,7 @@
           "description": "Version of the Artemis service.",
           "type": "string"
         },
-        "envelope": {
+        "firmware-envelope": {
           "description": "Firmware envelope to use. May be a short identifier or a URL. The string '$sdk-version' is replaced by the actual sdk-version.",
           "type": "string"
         },
@@ -280,6 +275,10 @@
           "items": {
             "$ref": "#/$defs/Trigger"
           }
+        },
+        "defines": {
+          "description": "Defines to pass to the container.",
+          "type": "object"
         }
       }
     },
